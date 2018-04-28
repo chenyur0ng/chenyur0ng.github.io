@@ -298,150 +298,15 @@
 
       
         
-          
-            <h1 id="2-Add-Two-Numbers"><a href="#2-Add-Two-Numbers" class="headerlink" title="2.Add Two Numbers"></a>2.Add Two Numbers</h1><p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in <strong>reverse order</strong> and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<p><strong>Example</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</span><br><span class="line">Output: 7 -&gt; 0 -&gt; 8</span><br><span class="line">Explanation: 342 + 465 = 807.</span><br></pre></td></tr></table></figure>
-<h2 id="常规方法"><a href="#常规方法" class="headerlink" title="常规方法"></a>常规方法</h2><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><h4 id="创建一个链表，每个结点逆序存放一个非负整数"><a href="#创建一个链表，每个结点逆序存放一个非负整数" class="headerlink" title="创建一个链表，每个结点逆序存放一个非负整数"></a>创建一个链表，每个结点逆序存放一个非负整数</h4><p>Step1</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span>&#123;</span></span><br><span class="line"><span class="keyword">int</span> data;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">Next</span>;</span><span class="comment">//指向下一个结点的链表指针</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Step2</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateLink</span><span class="params">(struct Link *n)</span></span>&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">p</span>=<span class="title">NULL</span>;</span></span><br><span class="line"><span class="keyword">int</span> num;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num);</span><br><span class="line"><span class="keyword">while</span>(num&lt;<span class="number">10</span>&amp;&amp;num&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">p=(struct Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Link));</span><br><span class="line">p-&gt;data=num;</span><br><span class="line">p-&gt;Next=n-&gt;Next;<span class="comment">//下一个结点的指向</span></span><br><span class="line">n-&gt;Next=p;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*点评：</span></span><br><span class="line"><span class="comment">两个scanf浪费，虽然由此构成了一个循环，这是很巧妙的；</span></span><br><span class="line"><span class="comment">如果while循环里没有写scanf的话，就不能构成一个循环了但是循环的终止又是什么呢？</span></span><br><span class="line"><span class="comment">很迷*/</span></span><br><span class="line"><span class="number">631501066431</span></span><br><span class="line"><span class="number">057187111776</span>/<span class="number">787</span></span><br></pre></td></tr></table></figure>
-<h4 id="输出结果链表"><a href="#输出结果链表" class="headerlink" title="输出结果链表"></a>输出结果链表</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintLink</span><span class="params">(struct Link *h)</span></span>&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">p</span>=<span class="title">h</span>-&gt;<span class="title">next</span>;</span></span><br><span class="line"><span class="keyword">while</span> (p)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,p-&gt;data);</span><br><span class="line">p=p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="两个链表的各个结点分别相加"><a href="#两个链表的各个结点分别相加" class="headerlink" title="两个链表的各个结点分别相加"></a>两个链表的各个结点分别相加</h4><p>相加后的结果存到新的链表里面去</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">struct Link *<span class="title">TwoLinkAdd</span><span class="params">(strut Link *n1,strut Link *n2)</span></span>&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">p1</span>,*<span class="title">p2</span>,*<span class="title">result</span>,*<span class="title">pTemp</span>;</span></span><br><span class="line">p1-&gt;Next=n1-&gt;Next;</span><br><span class="line">p2-&gt;Next=n2-&gt;Next;</span><br><span class="line">result=(struct Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Link));</span><br><span class="line">result-&gt;Next=<span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">int</span> num;</span><br><span class="line"><span class="keyword">int</span> carry=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(p1!=<span class="literal">NULL</span>&amp;&amp;p2!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">num=(p1-&gt;data)+(p2-&gt;data)+carry;</span><br><span class="line"><span class="comment">//为毛要加carry呢？因为考虑到相加之后可能有进位；</span></span><br><span class="line"><span class="comment">//那考虑到进位的情况如何具体解决呢？</span></span><br><span class="line"><span class="comment">/*先把两个结点相加的结果存在pTemp中去，(所以num不是最终结果哦)</span></span><br><span class="line"><span class="comment">然后根据是否大于是10，确定carry是等于1还是等于0</span></span><br><span class="line"><span class="comment">PS：carry=1进位；carry=0不进位</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">pTemp=(struct Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Link));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(num&gt;=<span class="number">10</span>)&#123;</span><br><span class="line">pTemp-&gt;data=num<span class="number">-10</span>;</span><br><span class="line">carry=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">pTemp-&gt;data=num;</span><br><span class="line">carry=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pTemp-&gt;Next=result-&gt;Next;<span class="comment">//???</span></span><br><span class="line">result-&gt;Next=pTemp;<span class="comment">//???</span></span><br><span class="line">p1=p1-&gt;Next；</span><br><span class="line">p2=p2-&gt;Next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//刚才是解决了诸如13+8=21存放1的步骤，接下来是存放高位数字</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">p</span>=<span class="title">NULL</span>;</span><span class="comment">//区别于pTemp,z这是真正存放结果的链表</span></span><br><span class="line"><span class="comment">//什么鬼</span></span><br><span class="line"><span class="keyword">if</span>(p1!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">p=p1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(p2!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">p=p2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(p!=<span class="literal">NULL</span>||carry==<span class="number">1</span>)&#123;</span><br><span class="line">pTemp=(struct Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Link));</span><br><span class="line">pTemp-&gt;data=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span>(p!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">pTemp-&gt;data=p-&gt;data;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(carry==<span class="number">1</span>)&#123;</span><br><span class="line">pTemp-&gt;data=(pTemp-&gt;data)+<span class="number">1</span>;</span><br><span class="line">carry=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">pTemp-&gt;Next=result-&gt;Next;</span><br><span class="line">result-&gt;Next=pTemp;</span><br><span class="line"><span class="keyword">if</span>(p!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">p=p-&gt;Next;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Link</span> *<span class="title">head</span>[2],*<span class="title">h</span>;</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;&lt;<span class="number">2</span>;i++)&#123;</span><br><span class="line">head[i]=(struct Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Link));</span><br><span class="line">head[i]-&gt;Next=<span class="literal">NULL</span>;</span><br><span class="line">CreateLink(head[i]);</span><br><span class="line">&#125;</span><br><span class="line">h=TwoLinkAdd(head[<span class="number">0</span>],head[<span class="number">1</span>]);</span><br><span class="line">PrintLink(h);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;&lt;<span class="number">2</span>;i++)&#123;</span><br><span class="line"><span class="built_in">free</span>(head[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>===========不晓得为什么错==================</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ListNode *<span class="title">addTwoNumbers</span><span class="params">(ListNode *p1,ListNode *p2)</span></span>&#123;</span><br><span class="line">ListNode *res=(ListNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct ListNode));</span><br><span class="line">ListNode *it;</span><br><span class="line"><span class="keyword">int</span> carry=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(p1!=<span class="literal">NULL</span>&amp;&amp;p2!=<span class="literal">NULL</span>)&#123;</span><br><span class="line"><span class="keyword">int</span> x=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span>(p1!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">x=p1-&gt;data;</span><br><span class="line">p1=p1-&gt;next;<span class="comment">//循环的增量</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> y=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span>(p2!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">x=p2-&gt;data;</span><br><span class="line">p2=p2-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> sum=x+y+carry;</span><br><span class="line">it=(ListNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct ListNode));</span><br><span class="line">it-&gt;data=sum%<span class="number">10</span>;</span><br><span class="line">it=it-&gt;next;</span><br><span class="line">carry=sum/<span class="number">10</span>;<span class="comment">// 精髓</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(carry&gt;<span class="number">0</span>)&#123;</span><br><span class="line">it-&gt;next=(ListNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct LinkNode));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> res-&gt;next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chenyur0ng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CharlotteChen's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/27/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-27T21:48:42+08:00">
-                2018-04-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          <h1 id="2-Add-Two-Numbers"><a href="#2-Add-Two-Numbers" class="headerlink" title="2.Add Two Numbers"></a>2.Add Two Numbers</h1><p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in <strong>reverse order</strong> and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/28/“day001”/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -521,7 +386,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
