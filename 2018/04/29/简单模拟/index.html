@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "fc544cf4"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="题目：找出所有形如abc*de（三位数乘以两位数）的算式，使得在完整的竖式中，所有数字都属于一个特定的数字集合。输入数字集合（相邻数字之间没有空格），输出所有竖式。每个竖式前应有编号，之后应有一个空行。最后输出解的总数。具体格式见样例输出（为了便于观察，竖式中的空格改用小数点显示，但你的程序应该输出空格，而非小数点）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="竖式问题">
+<meta property="og:url" content="http://yoursite.com/2018/04/29/简单模拟/index.html">
+<meta property="og:site_name" content="CharlotteChen&#39;s blog">
+<meta property="og:description" content="题目：找出所有形如abc*de（三位数乘以两位数）的算式，使得在完整的竖式中，所有数字都属于一个特定的数字集合。输入数字集合（相邻数字之间没有空格），输出所有竖式。每个竖式前应有编号，之后应有一个空行。最后输出解的总数。具体格式见样例输出（为了便于观察，竖式中的空格改用小数点显示，但你的程序应该输出空格，而非小数点）。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-01T03:30:06.008Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="竖式问题">
+<meta name="twitter:description" content="题目：找出所有形如abc*de（三位数乘以两位数）的算式，使得在完整的竖式中，所有数字都属于一个特定的数字集合。输入数字集合（相邻数字之间没有空格），输出所有竖式。每个竖式前应有编号，之后应有一个空行。最后输出解的总数。具体格式见样例输出（为了便于观察，竖式中的空格改用小数点显示，但你的程序应该输出空格，而非小数点）。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/29/简单模拟/"/>
+
+
+
+
+
+  <title>竖式问题 | CharlotteChen's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CharlotteChen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/29/简单模拟/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenyur0ng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharlotteChen's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">竖式问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-29T11:46:48+08:00">
+                2018-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法-简单模拟/" itemprop="url" rel="index">
+                    <span itemprop="name">算法/简单模拟</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+		  <span id="busuanzi_container_page_pv">
+      &nbsp; | &nbsp; 热度&nbsp; <span id="busuanzi_value_page_pv"></span>°C
+          </span>
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>找出所有形如abc*de（三位数乘以两位数）的算式，使得在完整的竖式中，所有数字都属于一个特定的数字集合。输入数字集合（相邻数字之间没有空格），输出所有竖式。每个竖式前应有编号，之后应有一个空行。最后输出解的总数。具体格式见样例输出（为了便于观察，竖式中的空格改用小数点显示，但你的程序应该输出空格，而非小数点）。</p>
+<a id="more"></a>
+<p>输入：一串数字</p>
+<p>处理：找三位数乘以两位数（abc*de）,在做乘法运算的时候涉及到的数字即为输入的那一串数字，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    775</span><br><span class="line"> x   33</span><br><span class="line">————————</span><br><span class="line">   2325</span><br><span class="line">+ 2325</span><br><span class="line">________</span><br><span class="line">  25575        //你看，2357包含了这个竖式所含的所有数字</span><br></pre></td></tr></table></figure>
+<h2 id="自我分析："><a href="#自我分析：" class="headerlink" title="自我分析："></a>自我分析：</h2><p>首先申明，我也不会呀，我就这么想想,<strong><em>而且先别看《自我分析》的备注</em></strong>。</p>
+<p>我想到我小学做乘法题，一个数字不变，另外一个数字拆成个十百分位分别与那个不变的数字相乘，然后按照个十百分位的格式相加。</p>
+<p>计算机如何做到让不同的数字个十百分位错乱的相加呢？？？？后面的数字总是影响着前面的数字，而且影响的程度还是<em> 10、</em> 100…..的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 既然这么烦，当然当整型数字处理啦，当字符，天哪，我刚才是怎么想的啊*/</span></span><br></pre></td></tr></table></figure>
+<p>而且我们要做的还是在屏幕上打印，里面还穿插着字符，城会玩。。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 既然这么烦，当然当整型数字处理啦，当字符，天哪，我刚才是怎么想的啊*/</span></span><br></pre></td></tr></table></figure>
+<p>打印就打印吧，还要打印出符合输入的所有的整式。。</p>
+<p>有趣。</p>
+<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">scanf(&quot;%s&quot;,s);</span><br><span class="line">for(abc=111;abc&lt;=999;abc++)&#123;</span><br><span class="line">    for(de=11;de&lt;=99;de++)&#123;</span><br><span class="line">        if(abc*de符合输入的那一串数字)&#123;</span><br><span class="line">            打印</span><br><span class="line">            count++；</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">printf(&quot;The number of solutions=%d\n&quot;,count);</span><br></pre></td></tr></table></figure>
+<p>乍一看，这还挺简单哦~~（保持这种自信，咱们继续）</p>
+<h2 id="难点逐个攻破"><a href="#难点逐个攻破" class="headerlink" title="难点逐个攻破"></a>难点逐个攻破</h2><h3 id="如何判断-“-abc-de以及竖式关联的数字-”-符合输入的那一串数字"><a href="#如何判断-“-abc-de以及竖式关联的数字-”-符合输入的那一串数字" class="headerlink" title="如何判断 “ abc*de以及竖式关联的数字 ” 符合输入的那一串数字"></a>如何判断 “ abc*de以及竖式关联的数字 ” 符合输入的那一串数字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//abc不动，拆个数少的(这样我们加的次数少一点)</span><br><span class="line">x=abc*(de%10);//de的个位和abc相乘得到的数(注意，不是字符啊)</span><br><span class="line">y=abc*(de/10);//de的十位和abc相乘(注意，不是字符啊)</span><br><span class="line">z=abc*de;//abc和de真正的乘机(注意，不是字符啊)</span><br><span class="line">// 现在去看看自我分析的备（zong）注(jie)  :)</span><br><span class="line"></span><br><span class="line">//然后我们联系输入的数字和x,y,z之间符不符合(！！！难点，翻过这道大山就可以~~~~下山啦，噗&gt; &lt; )</span><br><span class="line">//然后我发现一个神器，我前天还学到来着，当时记得它可以用来日期处理来着，现在又遇到它~~~缘分啊，，，噗。。笑死</span><br><span class="line">//没错，它就是sprintf！！！！！！！！！！</span><br><span class="line">sprintf(存放abc,dex,y,z各个数字的 字符串数组buf，&quot;%d%d%d%d%d&quot;,abc,de,x,y,z);</span><br><span class="line">//ok,我们成功将数字转化成数组，松口气喝口水，咱们~~下山去</span><br><span class="line">//你一定会说，卧槽，下什么山, 咱们还没比较呢；汗，忘记跟你说strchr了</span><br><span class="line">for(i=0;i&lt;strlen(buf);i++)&#123;</span><br><span class="line">    if(strchr(s,buf[i])==NULL)ok=0;</span><br><span class="line">&#125;//for循环用来一个一个字符逐一比较，如果字符串s中第一次出现buf[i]的位置是NULL，也就是空，(即字符串s中没有出现过字符buf[i]),那就不ok(ok=0);</span><br></pre></td></tr></table></figure>
+<h3 id="如何打印那个竖式"><a href="#如何打印那个竖式" class="headerlink" title="如何打印那个竖式"></a>如何打印那个竖式</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前面已经说到，ok=0就标志着 “ abc*de以及竖式关联的数字 ” 不符合输入的那一串数字</span></span><br><span class="line"><span class="comment">//那么我们要在之前添一个ok=1;这样我们才能把进行打印啊：）</span></span><br><span class="line"><span class="comment">//去看了一下参考代码，就两行，，啧啧，所以说，事情没有想象的那么难，如果有，也是自己被自己吓得。。anyway，我把自己吓得不轻，矮油-。-</span></span><br><span class="line"><span class="keyword">if</span>(ok)&#123;</span><br><span class="line">    pintf(<span class="string">"&lt;%d&gt;\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%5d\nX%4d\n-----\n%5d\n%4d\n-----\n%5d\n\n"</span>,abc,de,x,y,z);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="咱们一起呼-呼-两口气，啊，不对；是一口，因为咱们程序还没写完呐"><a href="#咱们一起呼-呼-两口气，啊，不对；是一口，因为咱们程序还没写完呐" class="headerlink" title="咱们一起呼~呼~两口气，啊，不对；是一口，因为咱们程序还没写完呐~~"></a>咱们一起呼~呼~两口气，啊，不对；是一口，因为咱们程序还没写完呐~~</h3><p>咱们现在要做的事：</p>
+<p>步骤一：把变量和数组该定义的定义、该初始化的初始化；</p>
+<p>步骤二：把用到的库函数，该声明的声明，讲真，我感觉用到字符串，不好好利用&lt;string.h&gt;就是在浪费生命哦-…-</p>
+<p>步骤0：咱们先搭建程序的框架，什么循环结构啊，顺序结构啊用到的按照逻辑写好，（里面具体怎么写我们已经解决了，按照语法好好写就行，然后之间遇到的变量啊，数组啊，函数啊什么的（步骤一和二），再在前面写）</p>
+<h2 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h2><p>刘汝佳老师的《算法竞赛入门经典》好书，值得推荐，等我有钱了，要买一本回来传给子孙万代，暂时先看电子版-。-    &gt;嘻嘻&lt;</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, ok, abc, de, x, y, z, count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">char</span> s[<span class="number">20</span>], buf[<span class="number">99</span>];</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%s"</span>, s);</span><br><span class="line">  <span class="keyword">for</span>(abc = <span class="number">111</span>; abc &lt;= <span class="number">999</span>; abc++)</span><br><span class="line">    <span class="keyword">for</span>(de = <span class="number">11</span>; de &lt;= <span class="number">99</span>; de++) &#123;</span><br><span class="line">      x = abc*(de%<span class="number">10</span>); y = abc*(de/<span class="number">10</span>); z = abc*de;</span><br><span class="line">      <span class="built_in">sprintf</span>(buf, <span class="string">"%d%d%d%d%d"</span>, abc, de, x, y, z);</span><br><span class="line">      ok = <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="built_in">strlen</span>(buf); i++)</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">strchr</span>(s, buf[i]) == <span class="literal">NULL</span>) ok = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">if</span>(ok) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"&lt;%d&gt;\n"</span>, ++count);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%5d\nX%4d\n-----\n%5d\n%4d\n-----\n%5d\n\n"</span>, abc, de, x, y, z);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"The number of solutions = %d\n"</span>, count);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">chenyur0ng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自我分析："><span class="nav-number">2.</span> <span class="nav-text">自我分析：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪代码"><span class="nav-number">3.</span> <span class="nav-text">伪代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#难点逐个攻破"><span class="nav-number">4.</span> <span class="nav-text">难点逐个攻破</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何判断-“-abc-de以及竖式关联的数字-”-符合输入的那一串数字"><span class="nav-number">4.1.</span> <span class="nav-text">如何判断 “ abc*de以及竖式关联的数字 ” 符合输入的那一串数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何打印那个竖式"><span class="nav-number">4.2.</span> <span class="nav-text">如何打印那个竖式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#咱们一起呼-呼-两口气，啊，不对；是一口，因为咱们程序还没写完呐"><span class="nav-number">4.3.</span> <span class="nav-text">咱们一起呼~呼~两口气，啊，不对；是一口，因为咱们程序还没写完呐~~</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考代码"><span class="nav-number">5.</span> <span class="nav-text">参考代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chenyur0ng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    				本站访客数:<span id="busuanzi_value_site_uv"></span>
+	</span>
+  </div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+ 
+
+
+
+</body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</html>
