@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="卡拉兹(Callatz)猜想： 对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。">
+<meta name="description" content="题目描述编写两个函数input和print，分别用来输入5个学生的数据记录和打印这5个学生的记录。对于每一个学生，其记录包含了学号、名字、3门课程的成绩共5项。用主函数分别调用input和print函数进行输入和输出。要求使用结构体数组实现，结构体中包括了每个学生的5项记录。 输入共有5行，每行包含了一个学生的学号（整数）、名字（长度不超过19的无空格字符串）和3门课程的成绩（0至100之间的整数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="b1001 害死人不偿命的(3n+1)猜想(15)">
-<meta property="og:url" content="http://yoursite.com/2018/05/01/PAT-B-1/index.html">
+<meta property="og:title" content="codeup1309">
+<meta property="og:url" content="http://yoursite.com/2018/05/01/codeup1309/index.html">
 <meta property="og:site_name" content="CharlotteChen&#39;s blog">
-<meta property="og:description" content="卡拉兹(Callatz)猜想： 对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。">
+<meta property="og:description" content="题目描述编写两个函数input和print，分别用来输入5个学生的数据记录和打印这5个学生的记录。对于每一个学生，其记录包含了学号、名字、3门课程的成绩共5项。用主函数分别调用input和print函数进行输入和输出。要求使用结构体数组实现，结构体中包括了每个学生的5项记录。 输入共有5行，每行包含了一个学生的学号（整数）、名字（长度不超过19的无空格字符串）和3门课程的成绩（0至100之间的整数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-01T06:24:14.963Z">
+<meta property="og:updated_time" content="2018-05-01T06:19:14.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="b1001 害死人不偿命的(3n+1)猜想(15)">
-<meta name="twitter:description" content="卡拉兹(Callatz)猜想： 对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。">
+<meta name="twitter:title" content="codeup1309">
+<meta name="twitter:description" content="题目描述编写两个函数input和print，分别用来输入5个学生的数据记录和打印这5个学生的记录。对于每一个学生，其记录包含了学号、名字、3门课程的成绩共5项。用主函数分别调用input和print函数进行输入和输出。要求使用结构体数组实现，结构体中包括了每个学生的5项记录。 输入共有5行，每行包含了一个学生的学号（整数）、名字（长度不超过19的无空格字符串）和3门课程的成绩（0至100之间的整数">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/01/PAT-B-1/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/01/codeup1309/"/>
 
 
 
 
 
-  <title>b1001 害死人不偿命的(3n+1)猜想(15) | CharlotteChen's blog</title>
+  <title>codeup1309 | CharlotteChen's blog</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/PAT-B-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/codeup1309/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenyur0ng">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">b1001 害死人不偿命的(3n+1)猜想(15)</h1>
+          <h1 class="post-title" itemprop="name headline">codeup1309</h1>
         
 
         <div class="post-meta">
@@ -291,7 +291,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-01T11:49:56+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-01T14:01:01+08:00">
                 2018-05-01
               </time>
             
@@ -314,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PAT-B/" itemprop="url" rel="index">
-                    <span itemprop="name">PAT_B</span>
+                  <a href="/categories/codeup/" itemprop="url" rel="index">
+                    <span itemprop="name">codeup</span>
                   </a>
                 </span>
 
@@ -353,19 +353,12 @@
       
 
       
-        <p>卡拉兹(Callatz)猜想：</p>
-<p>对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。</p>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>编写两个函数input和print，分别用来输入5个学生的数据记录和打印这5个学生的记录。对于每一个学生，其记录包含了学号、名字、3门课程的成绩共5项。用主函数分别调用input和print函数进行输入和输出。<br>要求使用结构体数组实现，结构体中包括了每个学生的5项记录。</p>
+<p>输入<br>共有5行，每行包含了一个学生的学号（整数）、名字（长度不超过19的无空格字符串）和3门课程的成绩（0至100之间的整数），用空格隔开。</p>
+<p>输出<br>与输入格式相同，每行输出一个学生的所有记录。<br>请注意行尾输出换行。</p>
 <a id="more"></a>
-<p>卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……</p>
-<p>我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过1000的正整数n，简单地数一下，需要多少步（砍几下）才能得到n=1？</p>
-<p>输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。</p>
-<p>输出格式：输出从n计算到1需要的步数。</p>
-<p>输入样例：<br>3<br>输出样例：<br>5</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i;</span><br><span class="line">	i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> temp;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	temp=n;</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(temp%<span class="number">2</span>==<span class="number">0</span>&amp;&amp;temp!=<span class="number">1</span>)&#123;</span><br><span class="line">			temp=temp/<span class="number">2</span>;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(temp%<span class="number">2</span>==<span class="number">1</span>&amp;&amp;temp!=<span class="number">1</span>)&#123;</span><br><span class="line">			temp=(<span class="number">3</span>*temp+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">while</span>(temp!=<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,i);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>修改了一下</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i;</span><br><span class="line">	i=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">			n/=<span class="number">2</span>;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(n=(<span class="number">3</span>*n+<span class="number">1</span>)/<span class="number">2</span>)</span><br><span class="line">			i++;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">	&#125;<span class="keyword">while</span>(n&lt;<span class="number">1000</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,i);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>思考🤔：</p>
-<p>乘法溢出：如果这个数是987654321，这么大的数字？？？</p>
+<p>样例输入<br>101 AAA 80 81 82<br>102 BBB 83 84 85<br>103 CCC 86 87 88<br>104 DDD 89 90 91<br>105 EEE 92 93 94<br>样例输出<br>101 AAA 80 81 82<br>102 BBB 83 84 85<br>103 CCC 86 87 88<br>104 DDD 89 90 91<br>105 EEE 92 93 94</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> number;</span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> score1;</span><br><span class="line">	<span class="keyword">int</span> score2;</span><br><span class="line">	<span class="keyword">int</span> score3;</span><br><span class="line">&#125;stu[<span class="number">5</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%s%d%d%d"</span>,&amp;stu[i].number,&amp;stu[i].name,&amp;stu[i].score1,&amp;stu[i].score2,&amp;stu[i].score3);</span><br><span class="line">	&#125;		</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d %s %d %d %d\n"</span>,stu[i].number,stu[i].name,stu[i].score1,stu[i].score2,stu[i].score3);</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	input();</span><br><span class="line">	print();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -390,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/29/简单模拟/" rel="next" title="竖式问题">
-                <i class="fa fa-chevron-left"></i> 竖式问题
+              <a href="/2018/05/01/codeup1304/" rel="next" title="codeup1304 结构体数组指针">
+                <i class="fa fa-chevron-left"></i> codeup1304 结构体数组指针
               </a>
             
           </div>
@@ -400,8 +393,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/01/PAT-B/" rel="prev" title="b1002 写出这个数 (20)">
-                b1002 写出这个数 (20) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/01/codeup1310/" rel="prev" title="codeup1310 结构体与数组（进阶版，有问题但AC）">
+                codeup1310 结构体与数组（进阶版，有问题但AC） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -477,8 +470,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -529,6 +531,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
