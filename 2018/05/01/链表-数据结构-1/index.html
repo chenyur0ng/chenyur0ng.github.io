@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="样例输入:4 1 2 3 45 1 2 3 4 50">
+<meta name="description" content="从一个无序的单链表中生成一个有序(从小到大)的单链表，要求不能建立新的单链表，即利用原有的单链表存储空间来生成有序单链表。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="codeup1003 黑盒测试">
-<meta property="og:url" content="http://yoursite.com/2018/05/01/codeup/index.html">
+<meta property="og:title" content="变为一个有序单链表">
+<meta property="og:url" content="http://yoursite.com/2018/05/01/链表-数据结构-1/index.html">
 <meta property="og:site_name" content="CharlotteChen&#39;s blog">
-<meta property="og:description" content="样例输入:4 1 2 3 45 1 2 3 4 50">
+<meta property="og:description" content="从一个无序的单链表中生成一个有序(从小到大)的单链表，要求不能建立新的单链表，即利用原有的单链表存储空间来生成有序单链表。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-01T04:17:57.876Z">
+<meta property="og:updated_time" content="2018-05-01T10:48:00.055Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="codeup1003 黑盒测试">
-<meta name="twitter:description" content="样例输入:4 1 2 3 45 1 2 3 4 50">
+<meta name="twitter:title" content="变为一个有序单链表">
+<meta name="twitter:description" content="从一个无序的单链表中生成一个有序(从小到大)的单链表，要求不能建立新的单链表，即利用原有的单链表存储空间来生成有序单链表。">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/01/codeup/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/01/链表-数据结构-1/"/>
 
 
 
 
 
-  <title>codeup1003 黑盒测试 | CharlotteChen's blog</title>
+  <title>变为一个有序单链表 | CharlotteChen's blog</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/codeup/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/链表-数据结构-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenyur0ng">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">codeup1003 黑盒测试</h1>
+          <h1 class="post-title" itemprop="name headline">变为一个有序单链表</h1>
         
 
         <div class="post-meta">
@@ -291,7 +291,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-01T12:05:11+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-01T18:43:38+08:00">
                 2018-05-01
               </time>
             
@@ -314,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/codeup/" itemprop="url" rel="index">
-                    <span itemprop="name">codeup</span>
+                  <a href="/categories/链表-数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">链表/数据结构</span>
                   </a>
                 </span>
 
@@ -353,15 +353,9 @@
       
 
       
-        <p>样例输入:<br>4 1 2 3 4<br>5 1 2 3 4 5<br>0<br><a id="more"></a><br>题目描述<br>你的任务是计算若干整数的和。</p>
-<p>输入</p>
-<p>每行的第一个数N，表示本行后面有N个数。</p>
-<p>如果N=0时，表示输入结束，且这一行不要计算。</p>
-<p>输出<br>对于每一行数据需要在相应的行输出和。</p>
-<p>样例输入<br>4 1 2 3 4<br>5 1 2 3 4 5<br>0<br>样例输出<br>10<br>15</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,n;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)&amp;&amp;n)&#123;</span><br><span class="line">		<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">			sum+=a;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>别人写的优秀代码作对比</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> n,a,sum;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)&amp;&amp;n)</span><br><span class="line">    &#123;</span><br><span class="line">        sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(n--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">            sum+=a;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>从一个无序的单链表中生成一个有序(从小到大)的单链表，要求不能建立新的单链表，即利用原有的单链表存储空间来生成有序单链表。</p>
+<a id="more"></a>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> elementype;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">linknode</span>&#123;</span></span><br><span class="line">	elementype data;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">linknode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;nodetype;</span><br><span class="line"></span><br><span class="line"><span class="function">nodetype *<span class="title">create</span><span class="params">()</span></span>&#123;</span><br><span class="line">	elementype d;</span><br><span class="line">	nodetype *h=<span class="literal">NULL</span>,*s,*t;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;d;</span><br><span class="line">		<span class="keyword">if</span>(d==<span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//以0表示输入结束</span></span><br><span class="line">		<span class="keyword">if</span>(i==<span class="number">1</span>)&#123;<span class="comment">//建立第一个结点</span></span><br><span class="line">		h=<span class="keyword">new</span> nodetype;</span><br><span class="line">		h-&gt;data=d;</span><br><span class="line">		h-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">		t=h;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;<span class="comment">//建立其余结点</span></span><br><span class="line">			s=<span class="keyword">new</span> nodetype;</span><br><span class="line">			s-&gt;data=d;</span><br><span class="line">			s-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">			t-&gt;next=s;</span><br><span class="line">			t=s;</span><br><span class="line">		&#125;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> h;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">disp</span><span class="params">(nodetype *h)</span></span>&#123;</span><br><span class="line">	nodetype *p=h;</span><br><span class="line">	<span class="keyword">if</span>(p=<span class="literal">NULL</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">"空表"</span>;</span><br><span class="line">	<span class="keyword">while</span>(p!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;p-&gt;data&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">nodetype *<span class="title">invert</span><span class="params">(nodetype *h)</span></span>&#123;</span><br><span class="line">	nodetype *p,*q,*r;</span><br><span class="line">	<span class="keyword">if</span>(len(h)&lt;<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"逆置的单链表至少两个结点"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		p=h;</span><br><span class="line">		q=p-&gt;next;</span><br><span class="line">		<span class="keyword">while</span>(q!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">			r=q-&gt;next;</span><br><span class="line">			q-&gt;next=p;</span><br><span class="line">			p=q;</span><br><span class="line">			q=r;</span><br><span class="line">		&#125;</span><br><span class="line">		h-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">		h=p;</span><br><span class="line">		<span class="keyword">return</span> h;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	nodetype *head;</span><br><span class="line">	head=create();</span><br><span class="line">	disp(head);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -386,8 +380,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/01/PAT-B/" rel="next" title="b1002 写出这个数 (20)">
-                <i class="fa fa-chevron-left"></i> b1002 写出这个数 (20)
+              <a href="/2018/05/01/codeup26052/" rel="next" title="codeup26052 矩阵转置">
+                <i class="fa fa-chevron-left"></i> codeup26052 矩阵转置
               </a>
             
           </div>
@@ -395,10 +389,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/01/codeup-1/" rel="prev" title="codeup1004 黑盒测试">
-                codeup1004 黑盒测试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -489,7 +479,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -500,7 +490,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
