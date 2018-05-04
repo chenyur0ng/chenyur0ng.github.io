@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="题目描述输入a、b、c三个整数，按先大后小的顺序输出a、b和c。注意请使用指针变量的方式进行比较和输出。">
+<meta name="description" content="前言主要内容：通过什么样的应用层协议来使用计算机网络所提供的通信服务。 为什么在运输层协议之上，还需要有应用层协议（application layer protocol）？​    因为，每个应用层协议都是为了解决某一类应用问题，而问题的解决又必须通过位于不同主机中的多个应用进程之间的通信和协同工作来完成。 ​    举个例子,万维网的应用层协议HTTP（超文本传输协议）就是由RFC7230定义的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="codeup1270 指针·比较三个数的大小">
-<meta property="og:url" content="http://yoursite.com/2018/05/01/codeup1270/index.html">
+<meta property="og:title" content="第六章应用层">
+<meta property="og:url" content="http://yoursite.com/2018/05/03/计算机网络/index.html">
 <meta property="og:site_name" content="CharlotteChen&#39;s blog">
-<meta property="og:description" content="题目描述输入a、b、c三个整数，按先大后小的顺序输出a、b和c。注意请使用指针变量的方式进行比较和输出。">
+<meta property="og:description" content="前言主要内容：通过什么样的应用层协议来使用计算机网络所提供的通信服务。 为什么在运输层协议之上，还需要有应用层协议（application layer protocol）？​    因为，每个应用层协议都是为了解决某一类应用问题，而问题的解决又必须通过位于不同主机中的多个应用进程之间的通信和协同工作来完成。 ​    举个例子,万维网的应用层协议HTTP（超文本传输协议）就是由RFC7230定义的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-01T06:22:13.106Z">
+<meta property="og:updated_time" content="2018-05-03T06:26:24.329Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="codeup1270 指针·比较三个数的大小">
-<meta name="twitter:description" content="题目描述输入a、b、c三个整数，按先大后小的顺序输出a、b和c。注意请使用指针变量的方式进行比较和输出。">
+<meta name="twitter:title" content="第六章应用层">
+<meta name="twitter:description" content="前言主要内容：通过什么样的应用层协议来使用计算机网络所提供的通信服务。 为什么在运输层协议之上，还需要有应用层协议（application layer protocol）？​    因为，每个应用层协议都是为了解决某一类应用问题，而问题的解决又必须通过位于不同主机中的多个应用进程之间的通信和协同工作来完成。 ​    举个例子,万维网的应用层协议HTTP（超文本传输协议）就是由RFC7230定义的">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/01/codeup1270/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/03/计算机网络/"/>
 
 
 
 
 
-  <title>codeup1270 指针·比较三个数的大小 | CharlotteChen's blog</title>
+  <title>第六章应用层 | CharlotteChen's blog</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/codeup1270/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/计算机网络/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenyur0ng">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">codeup1270 指针·比较三个数的大小</h1>
+          <h1 class="post-title" itemprop="name headline">第六章应用层</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-01T12:21:46+08:00">
-                2018-05-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-03T13:59:58+08:00">
+                2018-05-03
               </time>
             
 
@@ -314,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/codeup/" itemprop="url" rel="index">
-                    <span itemprop="name">codeup</span>
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
                   </a>
                 </span>
 
@@ -353,12 +353,16 @@
       
 
       
-        <p>题目描述<br>输入a、b、c三个整数，按先大后小的顺序输出a、b和c。注意请使用指针变量的方式进行比较和输出。</p>
-<a id="more"></a>
-<p>输入<br>三个用空格隔开的整数a、b和c。</p>
-<p>输出<br>按先大后小的顺序输出a、b和c，用空格隔开。<br>请注意行尾输出换行。</p>
-<p>样例输入<br>9 0 10<br>样例输出<br>10 9 0</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b,c;</span><br><span class="line">	<span class="keyword">int</span> *p,*q,*k;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">	p=&amp;a;</span><br><span class="line">	q=&amp;b;</span><br><span class="line">	k=&amp;c;</span><br><span class="line">	<span class="keyword">if</span>(*p&gt;*q&amp;&amp;*q&gt;*k)<span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,*p,*q,*k);</span><br><span class="line">	<span class="keyword">if</span>(*p&gt;*k&amp;&amp;*k&gt;*q)<span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,*p,*k,*q);</span><br><span class="line">	<span class="keyword">if</span>(*k&gt;*p&amp;&amp;*p&gt;*q)<span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,*k,*p,*q);</span><br><span class="line">	<span class="keyword">if</span>(*k&gt;*q&amp;&amp;*q&gt;*p)<span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,*k,*q,*p);</span><br><span class="line">	<span class="keyword">if</span>(*q&gt;*k&amp;&amp;*k&gt;*p)<span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,*q,*k,*p);</span><br><span class="line">	<span class="keyword">if</span>(*q&gt;*p&amp;&amp;*p&gt;*k)<span class="built_in">printf</span>(<span class="string">"%d %d %d"</span>,*q,*p,*k);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>主要内容：通过什么样的应用层协议来使用计算机网络所提供的通信服务。</p>
+<h4 id="为什么在运输层协议之上，还需要有应用层协议（application-layer-protocol）？"><a href="#为什么在运输层协议之上，还需要有应用层协议（application-layer-protocol）？" class="headerlink" title="为什么在运输层协议之上，还需要有应用层协议（application layer protocol）？"></a>为什么在运输层协议之上，还需要有应用层协议（application layer protocol）？</h4><p>​    因为，每个应用层协议都是为了解决某一类应用问题，而问题的解决又必须通过位于不同主机中的多个应用进程之间的通信和协同工作来完成。</p>
+<p>​    举个例子,万维网的应用层协议HTTP（超文本传输协议）就是由RFC7230定义的。如果浏览器开发者遵守RFC7230标准，所开发出来的浏览器就能够访问任何遵守该标准的万维网服务器并获取相应的万维网页面。</p>
+<h4 id="应用层协议应当怎样定义？"><a href="#应用层协议应当怎样定义？" class="headerlink" title="应用层协议应当怎样定义？"></a>应用层协议应当怎样定义？</h4><p>应用进程交换的报文类型，如请求报文和响应报文。</p>
+<p>各种报文类型的语法，如报文中的各个字段及其详细描述。</p>
+<p>字段的语义，即包含在字段中的信息的含义。</p>
+<p>进程何时、如何发送报文，以及对报文进行响应的规则。</p>
+<h4 id="【概念区分】应用层协议和网络应用"><a href="#【概念区分】应用层协议和网络应用" class="headerlink" title="【概念区分】应用层协议和网络应用"></a>【概念区分】应用层协议和网络应用</h4><p>应用层协议只是网络应用的一部分。</p>
+<p>举个例子，万维网的应用层协议是HTTP，它定义了在万维网浏览器和万维网服务器之间传送的报文类型、格式和序列等规则，但是万维网应用不仅包含一个应用层协议，还包含很多部件，有万维网浏览器、万维网服务器、万维网文档的格式标准。万维网浏览器如何显示一个万维网页面，万维网服务器是用多线程还是用多进程来实现，则都不是HTTP所定义的内容。</p>
+<h1 id="6-1域名系统DNS"><a href="#6-1域名系统DNS" class="headerlink" title="6.1域名系统DNS"></a>6.1域名系统DNS</h1><h2 id="6-1-1-域名系统概述"><a href="#6-1-1-域名系统概述" class="headerlink" title="6.1.1 域名系统概述"></a>6.1.1 域名系统概述</h2><p><strong>域名系统DNS（DomainNameSystem）</strong>是互联网使用的命名系统，用来把便于人们使用的<em>机器名字</em>转换为<em>IP地址</em>。DNS的互联网标准是RFC1034，1035。</p>
 
       
     </div>
@@ -383,8 +387,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/01/codeup1269/" rel="next" title="codeup1269 指针·比较两个数的大小">
-                <i class="fa fa-chevron-left"></i> codeup1269 指针·比较两个数的大小
+              <a href="/2018/05/03/PAT-B/" rel="next" title="b1003">
+                <i class="fa fa-chevron-left"></i> b1003
               </a>
             
           </div>
@@ -393,8 +397,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/01/codeup1284/" rel="prev" title="codeup1284 指针&数组">
-                codeup1284 指针&数组 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/03/计算机网络-1/" rel="prev" title="计算机网络第一章概述">
+                计算机网络第一章概述 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -470,8 +474,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -522,6 +535,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么在运输层协议之上，还需要有应用层协议（application-layer-protocol）？"><span class="nav-number">1.0.1.</span> <span class="nav-text">为什么在运输层协议之上，还需要有应用层协议（application layer protocol）？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用层协议应当怎样定义？"><span class="nav-number">1.0.2.</span> <span class="nav-text">应用层协议应当怎样定义？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#【概念区分】应用层协议和网络应用"><span class="nav-number">1.0.3.</span> <span class="nav-text">【概念区分】应用层协议和网络应用</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-1域名系统DNS"><span class="nav-number"></span> <span class="nav-text">6.1域名系统DNS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-1-域名系统概述"><span class="nav-number">1.</span> <span class="nav-text">6.1.1 域名系统概述</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
