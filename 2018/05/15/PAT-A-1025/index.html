@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "fc544cf4"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1025. PAT Ranking (25)Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several place">
+<meta property="og:type" content="article">
+<meta property="og:title" content="a_1025">
+<meta property="og:url" content="http://yoursite.com/2018/05/15/PAT-A-1025/index.html">
+<meta property="og:site_name" content="Less is More">
+<meta property="og:description" content="1025. PAT Ranking (25)Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several place">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-15T11:36:10.927Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="a_1025">
+<meta name="twitter:description" content="1025. PAT Ranking (25)Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several place">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/15/PAT-A-1025/"/>
+
+
+
+
+
+  <title>a_1025 | Less is More</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Less is More</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/15/PAT-A-1025/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="chenyur0ng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Less is More">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">a_1025</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-15T15:49:04+08:00">
+                2018-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PAT-A/" itemprop="url" rel="index">
+                    <span itemprop="name">PAT_A</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+		  <span id="busuanzi_container_page_pv">
+      &nbsp; | &nbsp; 热度&nbsp; <span id="busuanzi_value_page_pv"></span>°C
+          </span>
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1025-PAT-Ranking-25"><a href="#1025-PAT-Ranking-25" class="headerlink" title="1025. PAT Ranking (25)"></a>1025. PAT Ranking (25)</h2><p>Programming Ability Test (PAT) is organized by the College of Computer Science and Technology of Zhejiang University. Each test is supposed to run simultaneously in several places, and the ranklists will be merged immediately after the test. Now it is your job to write a program to correctly merge all the ranklists and generate the final rank.</p>
+<p>Input Specification:</p>
+<p>Each input file contains one test case. For each case, the first line contains a positive number N (&lt;=100), the number of test locations. Then N ranklists follow, each starts with a line containing a positive integer K (&lt;=300), the number of testees, and then K lines containing the registration number (a 13-digit number) and the total score of each testee. All the numbers in a line are separated by a space.</p>
+<p>Output Specification:</p>
+<p>For each test case, first print in one line the total number of testees. Then print the final ranklist in the following format:</p>
+<p>registration_number final_rank location_number local_rank</p>
+<p>The locations are numbered from 1 to N. The output must be sorted in nondecreasing order of the final ranks. The testees with the same score must have the same rank, and the output must be sorted in nondecreasing order of their registration numbers.</p>
+<p>Sample Input:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">5</span><br><span class="line">1234567890001 95</span><br><span class="line">1234567890005 100</span><br><span class="line">1234567890003 95</span><br><span class="line">1234567890002 77</span><br><span class="line">1234567890004 85</span><br><span class="line">4</span><br><span class="line">1234567890013 65</span><br><span class="line">1234567890011 25</span><br><span class="line">1234567890014 100</span><br><span class="line">1234567890012 85</span><br></pre></td></tr></table></figure>
+<p>Sample Output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">9</span><br><span class="line">1234567890005 1 1 1</span><br><span class="line">1234567890014 1 2 1</span><br><span class="line">1234567890001 3 1 2</span><br><span class="line">1234567890003 3 1 2</span><br><span class="line">1234567890004 5 1 4</span><br><span class="line">1234567890012 5 2 2</span><br><span class="line">1234567890002 7 1 5</span><br><span class="line">1234567890013 8 2 3</span><br><span class="line">1234567890011 9 2 4</span><br></pre></td></tr></table></figure>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>n个考场分别有（x_1,…,x_n）个学生，每个学上有相应的编号和分数。</p>
+<p>给这群学生进行排名，输出是总学生数，编号、总排名、考场号、考场内排名。</p>
+<h3 id="行文大纲"><a href="#行文大纲" class="headerlink" title="行文大纲"></a>行文大纲</h3><p>学生的一溜串信息弄个结构体组织一下；</p>
+<p>排序，一个是考场内排序，一个是总排序；</p>
+<p>比较烦的是，分数相同时得按编号排一下，但是排名要一样，而next要++</p>
+<p>还有考场内的排名也要记录。。</p>
+<p>神烦的解决方案是，模块化编程，稳住！</p>
+<h3 id="代码块儿"><a href="#代码块儿" class="headerlink" title="代码块儿"></a>代码块儿</h3><h5 id="学生信息处理"><a href="#学生信息处理" class="headerlink" title="学生信息处理"></a>学生信息处理</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> id[<span class="number">15</span>];<span class="comment">//准考证号</span></span><br><span class="line">    <span class="keyword">int</span> score;<span class="comment">//分数</span></span><br><span class="line">    <span class="keyword">int</span> location_number;<span class="comment">//考场号</span></span><br><span class="line">    <span class="keyword">int</span> local_rank;<span class="comment">//考场内排名</span></span><br><span class="line">&#125;stu[<span class="number">30010</span>];</span><br></pre></td></tr></table></figure>
+<h5 id="输入考场信息"><a href="#输入考场信息" class="headerlink" title="输入考场信息"></a>输入考场信息</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n,m,num;</span><br><span class="line">num=<span class="number">0</span>;<span class="comment">//考生总数</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);<span class="comment">//输入考场总个数</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);<span class="comment">//输入单个考场的考生总数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">        <span class="comment">//输入信息啦</span></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s %d"</span>,stu[j].id,&amp;stu[num].score);</span><br><span class="line">        stu[num].location_number=i;</span><br><span class="line">        num++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="根据排序规则的定义来编写一个cmp函数（就是那个神烦，单独拎出来）"><a href="#根据排序规则的定义来编写一个cmp函数（就是那个神烦，单独拎出来）" class="headerlink" title="根据排序规则的定义来编写一个cmp函数（就是那个神烦，单独拎出来）"></a>根据排序规则的定义来编写一个cmp函数（就是那个神烦，单独拎出来）</h5><p> 如果两个学生分数相同，那么按编号（char型）来，小的排前面</p>
+<h6 id="用到strcmp函数"><a href="#用到strcmp函数" class="headerlink" title="用到strcmp函数"></a>用到strcmp函数</h6><blockquote>
+<p>strcmp(字符串1，字符串2)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; 比较规则：</span><br><span class="line">&gt; 对两个字符串自左至右逐个字符相比（按ASCII码值大小比较），直到出现不同的字符或遇到‘\0’为止。如果全部字符相同，则认为相等；若出现不相同的字符，则以第一个不相同的字符的比较结果为准。</span><br><span class="line">&gt; 如果两个字符串都由英文字母组成，则有一个简单的规律：在英文字典中位置在后面的为“大”，还要特别注意：小写字母比大写字母“大”。</span><br><span class="line">&gt; 返回值：</span><br><span class="line">&gt; （1）字符串1=字符串2，返回0</span><br><span class="line">&gt; （2）字符串1&gt;字符串2，返回一个正整数</span><br><span class="line">&gt; （3）字符串1&lt;字符串2，返回一个负整数。</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(student a,student b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a.score!=b.score) <span class="keyword">return</span> a.score&gt;b.score;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">strcmp</span>(a.name,b.name);<span class="comment">//妙啊妙啊</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="排名的实现"><a href="#排名的实现" class="headerlink" title="排名的实现"></a>排名的实现</h5><p>排名的一般方法是分数不同排名不同，分数相同的排名相同但占用一个排位，如5个同学的分数是90,88,88,88,79，排名是1,2,2,2,5。</p>
+<p>一般数组排序完成后有两种方法，</p>
+<p><em>一种是将排名记录在结构体内</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">stu[<span class="number">0</span>].r=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(stu[i].score==stu[i<span class="number">-1</span>].score)&#123;</span><br><span class="line">        stu[i].r=stu[i<span class="number">-1</span>].r;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        str[i].r=i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>另一种是在输出的时候稍加整理</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> r=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i&gt;<span class="number">0</span>&amp;&amp;stu[i].score!=stu[i<span class="number">-1</span>].score)&#123;</span><br><span class="line">     	r=i+<span class="number">1</span>;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输出当前个体信息</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在本程序中，//算法笔记是这么写的,用到第一种方法</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sort(stu+num-m,stu+num,cmp);<span class="comment">//该考场的考生排序,解决了分数相同怎么排的问题</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j=num-m+<span class="number">1</span>;j&lt;num;j++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(stu[j].score==stu[j<span class="number">-1</span>].score)&#123;</span><br><span class="line">        stu[j].local_rank=stu[j<span class="number">-1</span>].local_rank;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        stu[j].local_rank=j+<span class="number">1</span>-(num-m);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="用到sort函数"><a href="#用到sort函数" class="headerlink" title="用到sort函数"></a>用到sort函数</h6><blockquote>
+<p>sort(首元素地址(必填),尾元素地址的下一个地址(必填),比较函数(非必填));</p>
+<p>——头文件“#include<algorithm>”和”using namespace std;”</algorithm></p>
+</blockquote>
+<h5 id="将所有的考生排序，-算法笔记是这么写的-用到第二种方法"><a href="#将所有的考生排序，-算法笔记是这么写的-用到第二种方法" class="headerlink" title="将所有的考生排序，//算法笔记是这么写的,用到第二种方法"></a>将所有的考生排序，//算法笔记是这么写的,用到第二种方法</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sort(stu,stu+num,cmp);</span><br><span class="line"><span class="keyword">int</span> r=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i&gt;<span class="number">0</span>;i&lt;num;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;<span class="number">0</span>&amp;&amp;stu[i].score!=stu[i<span class="number">-1</span>].score)&#123;</span><br><span class="line">            r=i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>,stu[i].id);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,r,stu[i].location_number,stu[i].local_rank);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//...</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/15/PAT-B1032/" rel="next" title="b1032 挖掘机技术哪家强 (20)">
+                <i class="fa fa-chevron-left"></i> b1032 挖掘机技术哪家强 (20)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">chenyur0ng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1025-PAT-Ranking-25"><span class="nav-number">1.</span> <span class="nav-text">1025. PAT Ranking (25)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目大意"><span class="nav-number">2.1.</span> <span class="nav-text">题目大意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行文大纲"><span class="nav-number">2.2.</span> <span class="nav-text">行文大纲</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码块儿"><span class="nav-number">2.3.</span> <span class="nav-text">代码块儿</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#学生信息处理"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">学生信息处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输入考场信息"><span class="nav-number">2.3.0.2.</span> <span class="nav-text">输入考场信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#根据排序规则的定义来编写一个cmp函数（就是那个神烦，单独拎出来）"><span class="nav-number">2.3.0.3.</span> <span class="nav-text">根据排序规则的定义来编写一个cmp函数（就是那个神烦，单独拎出来）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#用到strcmp函数"><span class="nav-number">2.3.0.3.1.</span> <span class="nav-text">用到strcmp函数</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排名的实现"><span class="nav-number">2.3.0.4.</span> <span class="nav-text">排名的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#用到sort函数"><span class="nav-number">2.3.0.4.1.</span> <span class="nav-text">用到sort函数</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将所有的考生排序，-算法笔记是这么写的-用到第二种方法"><span class="nav-number">2.3.0.5.</span> <span class="nav-text">将所有的考生排序，//算法笔记是这么写的,用到第二种方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试用例"><span class="nav-number">2.4.</span> <span class="nav-text">测试用例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chenyur0ng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">
+    <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+    				本站访客数:<span id="busuanzi_value_site_uv"></span>
+	</span>
+  </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+ 
+
+
+
+</body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</html>
